@@ -77,7 +77,7 @@ function drawMap(featureCollection) {
         .data(data)
         .attr('class','bar')
         .attr('fill', d => color(d.bedrooms))
-        .attr('x', d => scaleX(d.bedrooms) + 40)
+        .attr('x', d => scaleX(d.bedrooms) + 140)
         .attr('y', d => scaleY(d.total))
         .attr('width', scaleX.bandwidth())
         .attr('height', d => scaleY(0) - scaleY(d.total))
@@ -89,13 +89,13 @@ function drawMap(featureCollection) {
         .attr('font-weight', 'bold')
         .attr('font-size', '14px')
         .attr('fill', 'black')
-        .attr('x', d => scaleX(d.bedrooms) + 85)
+        .attr('x', d => scaleX(d.bedrooms) + 205)
         .attr('y', d => scaleY(d.total) - 20);
       
       bars.append('text')
         .text(name)
-        .attr('x', width - 740)
-        .attr('y', height - 610)
+        .attr('x', width/2.5)
+        .attr('y', height - 600)
         .attr('font-weight', 'bold')
         .attr('font-size', '18px')
         .attr('fill', 'black')
@@ -106,14 +106,13 @@ function drawMap(featureCollection) {
       
       svg
         .append('g')
-        .attr('transform', 'translate(40,' + (height-130) + ')')
+        .attr('transform', 'translate(140,' + (height-130) + ')')
         .call(xAxis)
       
       svg
         .append('g')
-        .attr('transform', 'translate(' + (width-940) + ',-0.5)')
+        .attr('transform', 'translate(' + (width/10) + ',-0.5)')
         .call(yAxis)
-
   }     
 }
 })
